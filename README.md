@@ -2,16 +2,15 @@
 
 We will be using the provided JSON files to create a photo gallery and style it using floats.
 
-
 Number and name of feature: Feature #1 - Display Images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 Hour
 
-Start time: _____
+Start time: 7:20PM
 
-Finish time: _____
+Finish time: 7:49PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 29 minutes
 
 
 
