@@ -8,24 +8,9 @@ function Horns(horn) {
   this.horns = horn.horns;
 }
 
-// let $select = $('#keyword-dropdown');
-// console.log($select);
-// $.get('./data/page-1.json', 'json')
-//   .then(data => {
-//     data.forEach(item => {
-//     // create option element - google jquery commands
-//     // give option element an id
-//     // give option elelment text
-//     // finally, append to $select
-//     // google jquery commands 
-//       $('#keyword-dropdown').append(`<option id="${item.keyword}">${item.keyword}</option>`)
-//       console.log(item.keyword);
-//     })
-//   })
-
 Horns.allHorns = [];
 
-Horns.prototype.render = function() {
+Horns.prototype.render = function () {
   $('main').append('<div class="clone"></div>');
   let hornClone = $('div[class="clone"]');
 
@@ -39,7 +24,7 @@ Horns.prototype.render = function() {
   hornClone.find('h3').text(this.keyword);
   hornClone.find('h4').text(this.horns);
   hornClone.removeClass('clone');
-  hornClone.attr('class', this.title);
+  hornClone.attr('class', this.keyword + ' horn-type ');
 }
 
 Horns.readJson = () => {
@@ -57,11 +42,25 @@ Horns.loadHorns = () => {
   Horns.allHorns.forEach(horn => horn.render())
 }
 
+let filterHorns = () => {
+
+  $('select.dropdown').on('change', () => {
+    let selectedClass = $('select option:selected').val();
+    if (selectedClass === 'default') {
+      $('.horn-type:hidden').show();
+    } else {
+      $('.horn-type').toArray().forEach((val) => {
+        val = $(val);
+        if (!val.hasClass(selectedClass)) {
+          val.hide();
+        } else {
+          val.show();
+        }
+      });
+    }
+  });
+};
+
+filterHorns();
+
 $(() => Horns.readJson());
-
-$('#jquery-stuff').hide();
-
-$('#keyword-dropdown').on('click', function() {
-  console.log('Button done got clicked');
-  //$('#jquery-stuff').fadeIn(8000);
-})
