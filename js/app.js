@@ -8,6 +8,21 @@ function Horns(horn) {
   this.horns = horn.horns;
 }
 
+// let $select = $('#keyword-dropdown');
+// console.log($select);
+// $.get('./data/page-1.json', 'json')
+//   .then(data => {
+//     data.forEach(item => {
+//     // create option element - google jquery commands
+//     // give option element an id
+//     // give option elelment text
+//     // finally, append to $select
+//     // google jquery commands 
+//       $('#keyword-dropdown').append(`<option id="${item.keyword}">${item.keyword}</option>`)
+//       console.log(item.keyword);
+//     })
+//   })
+
 Horns.allHorns = [];
 
 Horns.prototype.render = function() {
@@ -32,6 +47,7 @@ Horns.readJson = () => {
     .then(data => {
       data.forEach(item => {
         Horns.allHorns.push(new Horns(item));
+        $('#keyword-dropdown').append(`<option id="${item.keyword}">${item.keyword}</option>`)
       })
     })
     .then(Horns.loadHorns)
@@ -42,3 +58,10 @@ Horns.loadHorns = () => {
 }
 
 $(() => Horns.readJson());
+
+$('#jquery-stuff').hide();
+
+$('#keyword-dropdown').on('click', function() {
+  console.log('Button done got clicked');
+  //$('#jquery-stuff').fadeIn(8000);
+})
