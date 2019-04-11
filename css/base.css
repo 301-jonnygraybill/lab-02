@@ -1,0 +1,41 @@
+/* The Magic Float Center Code */
+.float_center {
+  float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+.float_center > .child {
+  position: relative;
+  left: 50%;
+}
+
+/* style */
+body {
+  height:100%;
+  width:100%;
+  background-color: #dd9999;
+  background-color: #E288A0;
+  font-family: arial, sans-serif;
+}
+.clear {
+  clear:both;
+}
+
+#title {
+  text-align: center;
+  color: #ffffff;
+  margin: 40px 0 0 0;
+}
+
+img {
+  position: relative;
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+
