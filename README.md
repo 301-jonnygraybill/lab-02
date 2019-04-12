@@ -14,8 +14,8 @@ Start time: 7:52PM
 Finish time: 1:15AM
 Actual time needed to complete: ?
 
-Number and name of feature: 
-Estimate of time needed to complete: _____
-Start time: _____
-Finish time: _____
-Actual time needed to complete: _____
+Number and name of feature: Feature #3 - Style the application
+Estimate of time needed to complete: 1 Hour
+Start time: 6:00PM
+Finish time: 6:30PM
+Actual time needed to complete: 30 minutes
